@@ -77,3 +77,7 @@ ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
 - link:https://daggerok.gitlab.io/{root-project-name}[GitLab pages]
 - link:{bitbucket-url}[BitBucket repo]
 ////
+
+== Other links
+
+- link:https://maven.apache.org/plugins/maven-assembly-plugin/[maven-assembly-plugin page]
