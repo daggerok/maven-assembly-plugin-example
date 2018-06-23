@@ -18,7 +18,7 @@ script:
 #
 - ./mvnw exec:exec
 
-before_deploy: ./mvnw
+before_deploy: ./mvnw process-resources
 
 deploy:
   provider: pages

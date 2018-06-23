@@ -64,7 +64,7 @@ java -jar target/*-all.jar
 .build documentation
 [source,bash]
 ----
-bash docs/gradlew -b docs/build.gradle documentation
+./mvnw process-resources
 ----
 
 == Links
