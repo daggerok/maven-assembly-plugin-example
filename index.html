@@ -566,7 +566,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-06-23 22:21:14 UTC</span>
+<span id="revdate">2018-06-23 22:43:12 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -628,13 +628,11 @@ table.CodeRay td.code>pre{padding:0}
          <span class="content">http://maven.apache.org/POM/4.0.0</span>
          <span class="content">http://maven.apache.org/xsd/maven-4.0.0.xsd</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
   <span class="tag">&lt;build&gt;</span>
-    <span class="tag">&lt;defaultGoal&gt;</span>clean package<span class="tag">&lt;/defaultGoal&gt;</span>
     <span class="tag">&lt;plugins&gt;</span>
       <span class="tag">&lt;plugin&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>maven-assembly-plugin<span class="tag">&lt;/artifactId&gt;</span>
         <span class="tag">&lt;version&gt;</span>3.1.0<span class="tag">&lt;/version&gt;</span>
-
         <span class="tag">&lt;configuration&gt;</span>
           <span class="tag">&lt;finalName&gt;</span>${project.artifactId}-${project.version}-all<span class="tag">&lt;/finalName&gt;</span>
           <span class="comment">&lt;!--
@@ -643,18 +641,15 @@ table.CodeRay td.code>pre{padding:0}
           &lt;/descriptors&gt;
           --&gt;</span>
           <span class="tag">&lt;appendAssemblyId&gt;</span>false<span class="tag">&lt;/appendAssemblyId&gt;</span>
-
           <span class="tag">&lt;descriptorRefs&gt;</span>
             <span class="tag">&lt;descriptorRef&gt;</span>jar-with-dependencies<span class="tag">&lt;/descriptorRef&gt;</span>
           <span class="tag">&lt;/descriptorRefs&gt;</span>
-
           <span class="tag">&lt;archive&gt;</span>
             <span class="tag">&lt;manifest&gt;</span>
               <span class="tag">&lt;mainClass&gt;</span>daggerok.App<span class="tag">&lt;/mainClass&gt;</span>
             <span class="tag">&lt;/manifest&gt;</span>
           <span class="tag">&lt;/archive&gt;</span>
         <span class="tag">&lt;/configuration&gt;</span>
-
         <span class="tag">&lt;executions&gt;</span>
           <span class="tag">&lt;execution&gt;</span>
             <span class="tag">&lt;id&gt;</span>assemble-jar-with-dependencies<span class="tag">&lt;/id&gt;</span>
@@ -666,6 +661,7 @@ table.CodeRay td.code>pre{padding:0}
         <span class="tag">&lt;/executions&gt;</span>
       <span class="tag">&lt;/plugin&gt;</span>
     <span class="tag">&lt;/plugins&gt;</span>
+    <span class="tag">&lt;defaultGoal&gt;</span>clean package<span class="tag">&lt;/defaultGoal&gt;</span>
   <span class="tag">&lt;/build&gt;</span>
 <span class="tag">&lt;/project&gt;</span></code></pre>
 </div>
@@ -734,7 +730,7 @@ table.CodeRay td.code>pre{padding:0}
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-06-23 22:21:14 UTC
+Last updated 2018-06-23 22:43:12 UTC
 </div>
 </div>
 </body>
