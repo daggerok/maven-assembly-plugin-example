@@ -2,7 +2,7 @@
 
 //tag::content[]
 
-This project contains example of `maven-assemble-plugin` usage
+This project contains example of `maven-assembly-plugin` usage
 
 Read link:https://daggerok.github.io/maven-assembly-plugin-example[reference documentation]
 

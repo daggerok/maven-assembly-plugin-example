@@ -119,7 +119,6 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.6.0</version>
-        <!-- configuration 1:
         <configuration>
           <executable>java</executable>
           <arguments>
@@ -128,42 +127,6 @@
             <argument>daggerok.App</argument>
           </arguments>
         </configuration>
-        -->
-        <!-- configuration 2: -->
-        <configuration>
-          <executable>java</executable>
-          <arguments>
-            <argument>-classpath</argument>
-            <classpath>
-              <dependency/>
-            </classpath>
-            <argument>daggerok.App</argument>
-          </arguments>
-        </configuration>
-        <!-- configuration 3:
-        <configuration>
-          <skip>true</skip>
-          <executable>java</executable>
-          <arguments>
-            <argument>-classpath</argument>
-            <classpath>
-              <dependency>org.slf4j:slf4j-api</dependency>
-              <dependency>ch.qos.logback:logback-core</dependency>
-              <dependency>ch.qos.logback:logback-classic</dependency>
-            </classpath>
-            <argument>daggerok.App</argument>
-          </arguments>
-        </configuration>
-        <executions>
-          <execution>
-            <id>exec</id>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <phase>integration-test</phase>
-          </execution>
-        </executions>
-        -->
       </plugin>
 
       <plugin>
