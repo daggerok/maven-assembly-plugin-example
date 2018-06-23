@@ -103,7 +103,7 @@
 
   <!-- tag::content[] -->
   <build>
-    <defaultGoal>clean package</defaultGoal>
+    <defaultGoal>clean process-resources package exec:exec</defaultGoal>
     <plugins>
       <!-- end::content[] -->
       <plugin>
