@@ -1,9 +1,4 @@
 = {root-project-name} ({project-version})
-////
-image:https://travis-ci.org/daggerok/root-project-name.svg?branch=master["Build Status", link=github-url]
-image:https://gitlab.com/daggerok/root-project-name/badges/master/build.svg["Build Status", link=gitlab-url]
-image:https://img.shields.io/bitbucket/pipelines/daggerok/root-project-name.svg["Build Status", link=bitbucket-url]
-////
 Maksim Kostromin <daggerok@gmail.com>
 {docdatetime}
 :doctype: book
@@ -18,14 +13,6 @@ Maksim Kostromin <daggerok@gmail.com>
 
 Travis CI status:
 image:https://travis-ci.org/daggerok/{root-project-name}.svg?branch=master["Build Status", link={github-url}]
-
-////
-GitLab CI status:
-image:https://gitlab.com/daggerok/{root-project-name}/badges/master/build.svg["Build Status", link={gitlab-url}]
-
-BitBucket CI status:
-image:https://img.shields.io/bitbucket/pipelines/daggerok/{root-project-name}.svg["Build Status", link={bitbucket-url}]
-////
 
 == Introduction
 
@@ -56,7 +43,7 @@ include::../pom.xml[tags=content]
 .run app
 [source,bash]
 ----
-java -jar target/*-all.jar
+java -jar ./target/*-all.jar
 ----
 
 == Build documentation
@@ -72,11 +59,6 @@ java -jar target/*-all.jar
 ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
 - link:{github-url}[GitHub repo]
 - link:https://daggerok.github.io/{root-project-name}[GitHub pages]
-////
-- link:{gitlab-url}[GitLab repo]
-- link:https://daggerok.gitlab.io/{root-project-name}[GitLab pages]
-- link:{bitbucket-url}[BitBucket repo]
-////
 
 == Other links
 
