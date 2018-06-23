@@ -104,7 +104,6 @@
   <!-- tag::content[] -->
   <build>
     <defaultGoal>clean package</defaultGoal>
-
     <plugins>
       <!-- end::content[] -->
       <plugin>
