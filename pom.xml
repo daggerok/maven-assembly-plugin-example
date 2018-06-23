@@ -103,10 +103,10 @@
 
   <!-- tag::content[] -->
   <build>
-    <!-- end::content[] -->
     <defaultGoal>clean package</defaultGoal>
 
     <plugins>
+      <!-- end::content[] -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
