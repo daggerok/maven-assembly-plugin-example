@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>{root-project-name} ({project-version})</title>
-<date>2018-06-23 20:42:42 UTC</date>
+<date>2018-06-23 22:21:14 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>{project-version}</revnumber>
-<date>2018-06-23 20:42:42 UTC</date>
+<date>2018-06-23 22:21:14 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -63,7 +63,6 @@ public class App {
   &lt;build&gt;
     &lt;defaultGoal&gt;clean package&lt;/defaultGoal&gt;
     &lt;plugins&gt;
-      &lt;!-- fat jar --&gt;
       &lt;plugin&gt;
         &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
         &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt;
@@ -116,7 +115,7 @@ public class App {
 <formalpara>
 <title>run app</title>
 <para>
-<programlisting language="bash" linenumbering="unnumbered">java -jar target/*-all.jar</programlisting>
+<programlisting language="bash" linenumbering="unnumbered">java -jar ./target/*-all.jar</programlisting>
 </para>
 </formalpara>
 </chapter>
