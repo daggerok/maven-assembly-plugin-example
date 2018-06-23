@@ -2,7 +2,9 @@
 <!-- tag::content[] -->
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="
+         http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <!-- end::content[] -->
   <modelVersion>4.0.0</modelVersion>
 
@@ -164,8 +166,7 @@
           </arguments>
         </configuration>
         -->
-        <!-- configuration 2:
-        -->
+        <!-- configuration 2: -->
         <configuration>
           <executable>java</executable>
           <arguments>
@@ -176,7 +177,7 @@
             <argument>daggerok.App</argument>
           </arguments>
         </configuration>
-        <!--
+        <!-- configuration 3:
         <configuration>
           <skip>true</skip>
           <executable>java</executable>
@@ -238,6 +239,105 @@
           </properties>
         </configuration>
       </plugin>
+
+      <plugin>
+        <groupId>org.asciidoctor</groupId>
+        <artifactId>asciidoctor-maven-plugin</artifactId>
+        <version>1.5.6</version>
+        <executions>
+          <execution>
+            <id>output-html</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>process-asciidoc</goal>
+            </goals>
+            <configuration>
+              <baseDir>${docs}</baseDir>
+              <sourceHighlighter>coderay</sourceHighlighter>
+              <backend>html</backend>
+              <attributes>
+                <toc>left</toc>
+                <!--
+                -->
+                <linkcss>false</linkcss>
+                <doctype>book</doctype>
+                <ruby>erubis</ruby>
+                <encoding>${project.build.sourceEncoding}</encoding>
+                <linkattrs>true</linkattrs>
+                <numbered>true</numbered>
+                <sectanchors>true</sectanchors>
+                <sectlink>true</sectlink>
+                <idprefix/>
+                <docinfo1/>
+                <icons>font</icons>
+                <idseparator>-</idseparator>
+                <setanchors>true</setanchors>
+                <source-highlighter>coderay</source-highlighter>
+                <toc-title>Table of Contents</toc-title>
+                <project-name>${project.artifactId}</project-name>
+                <root-project-name>${project.artifactId}</root-project-name>
+                <project-version>${project.version}</project-version>
+                <github-url>https://github.com/daggerok/${project.artifactId}</github-url>
+              </attributes>
+            </configuration>
+          </execution>
+          <execution>
+            <id>output-docbook</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>process-asciidoc</goal>
+            </goals>
+            <configuration>
+              <backend>docbook</backend>
+              <doctype>book</doctype>
+            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <sourceDirectory>./docs</sourceDirectory>
+          <headerFooter>true</headerFooter>
+        </configuration>
+      </plugin>
+
+      <!--
+      <plugin>
+        <groupId>org.asciidoctor</groupId>
+        <artifactId>asciidoctor-maven-plugin</artifactId>
+        <version>1.5.6</version>
+        <executions>
+          <execution>
+            <id>output-html</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>process-asciidoc</goal>
+            </goals>
+            <configuration>
+              <backend>docbook</backend>
+              <doctype>book</doctype>
+            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <sourceDirectory>${project.basedir}/docs/src</sourceDirectory>
+          <sourceDocumentName>index.adoc</sourceDocumentName>
+          <backend>html5</backend>
+          <preserveDirectories>true</preserveDirectories>
+          <resources>
+            <resource>
+              <directory>docs/static</directory>
+              <includes>
+                <include>**/*</include>
+                <include>**/*.*</include>
+              </includes>
+            </resource>
+          </resources>
+          <attributes>
+            <toc>left</toc>
+            <linkcss>false</linkcss>
+          </attributes>
+        </configuration>
+      </plugin>
+      -->
       <!-- tag::content[] -->
     </plugins>
   </build>

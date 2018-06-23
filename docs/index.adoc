@@ -29,20 +29,20 @@ image:https://img.shields.io/bitbucket/pipelines/daggerok/{root-project-name}.sv
 
 == Introduction
 
-include::../../README.adoc[tags=content]
+include::../README.adoc[tags=content]
 
 == Implementation
 
 .java example
 [source,java]
 ----
-include::../../src/main/java/daggerok/App.java[tags=content]
+include::../src/main/java/daggerok/App.java[tags=content]
 ----
 
 .plugion configuration
 [source,xml]
 ----
-include::../../pom.xml[tags=content]
+include::../pom.xml[tags=content]
 ----
 
 == Test usage
@@ -69,12 +69,11 @@ bash docs/gradlew -b docs/build.gradle documentation
 
 == Links
 
-ifdef::backend-html5[link:./index.pdf[Documentation in PFD format]]
-
-link:{github-url}[GitHub repo]
-link:https://daggerok.github.io/{root-project-name}[GitHub pages]
-
-link:{gitlab-url}[GitLab repo]
-link:https://daggerok.gitlab.io/{root-project-name}[GitLab pages]
-
-link:{bitbucket-url}[BitBucket repo]
+ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
+- link:{github-url}[GitHub repo]
+- link:https://daggerok.github.io/{root-project-name}[GitHub pages]
+////
+- link:{gitlab-url}[GitLab repo]
+- link:https://daggerok.gitlab.io/{root-project-name}[GitLab pages]
+- link:{bitbucket-url}[BitBucket repo]
+////
