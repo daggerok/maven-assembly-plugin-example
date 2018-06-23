@@ -18,7 +18,7 @@ script:
 #
 - ./mvnw exec:exec
 
-before_deploy: bash docs/gradlew -b docs/build.gradle documentation
+before_deploy: ./mvnw clean package
 
 deploy:
   provider: pages
