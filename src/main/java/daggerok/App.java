@@ -1,5 +1,6 @@
 package daggerok;
 
+//tag::content[]
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -8,3 +9,4 @@ public class App {
     log.info("yo!");
   }
 }
+//end::content[]

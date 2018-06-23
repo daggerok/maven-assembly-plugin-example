@@ -17,10 +17,10 @@
     <junit.jupiter.version>5.1.0</junit.jupiter.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <logback.version>1.2.3</logback.version>
     <lombok.version>1.16.20</lombok.version>
     <junit4.version>4.12</junit4.version>
     <slf4j.version>1.7.25</slf4j.version>
-    <vavr.version>0.9.2</vavr.version>
   </properties>
 
   <dependencyManagement>
@@ -35,11 +35,6 @@
 
   <dependencies>
     <dependency>
-      <groupId>io.vavr</groupId>
-      <artifactId>vavr</artifactId>
-      <version>${vavr.version}</version>
-    </dependency>
-    <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>${lombok.version}</version>
@@ -53,19 +48,9 @@
       <version>${slf4j.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>jul-to-slf4j</artifactId>
-      <version>${slf4j.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>log4j-over-slf4j</artifactId>
-      <version>${slf4j.version}</version>
-    </dependency>
-    <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.2.3</version>
+      <version>${logback.version}</version>
     </dependency>
 
     <!-- junit 4 -->
@@ -164,6 +149,58 @@
         </executions>
       </plugin>
       <!-- end::content[] -->
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <!-- configuration 1:
+        <configuration>
+          <executable>java</executable>
+          <arguments>
+            <argument>-classpath</argument>
+            <classpath/>
+            <argument>daggerok.App</argument>
+          </arguments>
+        </configuration>
+        -->
+        <!-- configuration 2:
+        -->
+        <configuration>
+          <executable>java</executable>
+          <arguments>
+            <argument>-classpath</argument>
+            <classpath>
+              <dependency/>
+            </classpath>
+            <argument>daggerok.App</argument>
+          </arguments>
+        </configuration>
+        <!--
+        <configuration>
+          <skip>true</skip>
+          <executable>java</executable>
+          <arguments>
+            <argument>-classpath</argument>
+            <classpath>
+              <dependency>org.slf4j:slf4j-api</dependency>
+              <dependency>ch.qos.logback:logback-core</dependency>
+              <dependency>ch.qos.logback:logback-classic</dependency>
+            </classpath>
+            <argument>daggerok.App</argument>
+          </arguments>
+        </configuration>
+        <executions>
+          <execution>
+            <id>exec</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>integration-test</phase>
+          </execution>
+        </executions>
+        -->
+      </plugin>
 
       <!-- junit -->
       <plugin>

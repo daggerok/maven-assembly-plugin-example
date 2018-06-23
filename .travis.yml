@@ -1,6 +1,3 @@
-service:
-- docker
-
 env:
   global:
   - TERM=dumb
@@ -12,37 +9,13 @@ apt:
   update: true
   packages:
   - bash
-  - unzip
-  - curl
-  - jq
-  - libxml2-utils
-  - docker-ce
-  - python-pip
 
 install: true
-before_script:
-- sudo pip install docker-compose httpie >/dev/null 2>&1
-- source <(curl -s https://raw.githubusercontent.com/daggerok/bash-functions/master/main.bash)
-
 script:
-- bash gradlew >/dev/null 2>&1
-- java -jar ./build/libs/*-all.jar
-#
-- bash gradlew clean installDist >/dev/null 2>&1
-- bash ./build/install/maven-assembly-plugin-example/bin/maven-assembly-plugin-example
-#
-- bash gradlew clean distZip >/dev/null 2>&1
-- unzip -o ./build/distributions/maven-assembly-plugin-example-0.0.1.zip -d /tmp
-- bash /tmp/maven-assembly-plugin-example-0.0.1/bin/maven-assembly-plugin-example
-#
-- bash gradlew clean build composeUp
-- bash gradlew composeDown
-#
-- bash mvnw clean package >/dev/null 2>&1
+- ./mvnw clean package deploy >/dev/null
 - java -jar target/*-all.jar
 #
-- bash mvnw com.dkanejs.maven.plugins:docker-compose-maven-plugin:1.0.1:up -P docker
-- bash mvnw com.dkanejs.maven.plugins:docker-compose-maven-plugin:1.0.1:down -P docker
+- ./mvnw exec:exec
 
 before_deploy: bash docs/gradlew -b docs/build.gradle documentation
 
