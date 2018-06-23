@@ -63,3 +63,5 @@ ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
 == Other links
 
 - link:https://maven.apache.org/plugins/maven-assembly-plugin/[maven-assembly-plugin page]
+- link:https://maven.apache.org/plugins/maven-assembly-plugin/examples/[maven-assembly-plugin examples]
+
