@@ -98,9 +98,15 @@
     </dependency>
   </dependencies>
 
+  <distributionManagement>
+    <repository>
+      <id>local-repo</id>
+      <url>file://${project.basedir}/target/local-repo</url>
+    </repository>
+  </distributionManagement>
+
   <!-- tag::content[] -->
   <build>
-    <defaultGoal>clean package</defaultGoal>
     <plugins>
       <!-- end::content[] -->
       <plugin>
@@ -108,44 +114,6 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.7.0</version>
       </plugin>
-
-      <!-- tag::content[] -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>3.1.0</version>
-
-        <configuration>
-          <finalName>${project.artifactId}-${project.version}-all</finalName>
-          <!--
-          <descriptors>
-            <descriptor>${project.basedir}/.mvn/assembly.xml</descriptor>
-          </descriptors>
-          -->
-          <appendAssemblyId>false</appendAssemblyId>
-
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-
-          <archive>
-            <manifest>
-              <mainClass>daggerok.App</mainClass>
-            </manifest>
-          </archive>
-        </configuration>
-
-        <executions>
-          <execution>
-            <id>assemble-jar-with-dependencies</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <!-- end::content[] -->
 
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -277,18 +245,41 @@
           <headerFooter>true</headerFooter>
         </configuration>
       </plugin>
+
       <!-- tag::content[] -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <finalName>${project.artifactId}-${project.version}-all</finalName>
+          <!--
+          <descriptors>
+            <descriptor>${project.basedir}/.mvn/assembly.xml</descriptor>
+          </descriptors>
+          -->
+          <appendAssemblyId>false</appendAssemblyId>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>daggerok.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        <executions>
+          <execution>
+            <id>assemble-jar-with-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
+    <defaultGoal>clean package</defaultGoal>
   </build>
-  <!-- end::content[] -->
-
-  <distributionManagement>
-    <repository>
-      <id>local-repo</id>
-      <url>file://${project.basedir}/target/local-repo</url>
-    </repository>
-  </distributionManagement>
-
-  <!-- tag::content[] -->
 </project>
 <!-- end::content[] -->
