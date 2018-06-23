@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>{root-project-name} ({project-version})</title>
-<date>2018-06-23 20:31:33 UTC</date>
+<date>2018-06-23 20:35:25 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>{project-version}</revnumber>
-<date>2018-06-23 20:31:33 UTC</date>
+<date>2018-06-23 20:35:25 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -61,6 +61,9 @@ public class App {
          http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
   &lt;build&gt;
+    &lt;defaultGoal&gt;clean package&lt;/defaultGoal&gt;
+
+    &lt;plugins&gt;
       &lt;!-- fat jar --&gt;
       &lt;plugin&gt;
         &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
